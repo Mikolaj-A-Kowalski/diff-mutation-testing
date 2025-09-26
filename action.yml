@@ -14,10 +14,5 @@ outputs:
     description: 'Number of PR comments created'
 
 runs:
-  using: "composite"
-  steps:
-    - name: Hello world!
-      run: |
-        echo "Hello world!"
-      shell: bash
-
+  using: "docker"
+  image: "Dockerfile"   # Refers to Dockerfile in the same repo
