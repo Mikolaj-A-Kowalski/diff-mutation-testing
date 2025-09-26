@@ -1,7 +1,5 @@
 # Diff-based mutation testing GitHub Action
 
-test
-
 This repository was created as part of the X-VISS hackathon 2025 by the following participants:
 - Mikolaj Kowalski @Mikolaj-A-Kowalski
 - Jack Franklin @jackdfranklin
