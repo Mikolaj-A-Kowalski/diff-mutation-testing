@@ -1,0 +1,23 @@
+name: 'diff-based mutation testing'
+description: 'GitHub Action for diff-based mutation testing on pull requests'
+author: 'Matt Archer, Jack Franklin, Sam Avis, Mikolaj Kowalski'
+
+inputs:
+  github-token:
+    description: 'GitHub token for API access'
+    required: true
+    default: '${{ github.token }}' # TODO: Is this correct
+
+outputs:
+  # TODO: Need to figure out the what outputs do we want
+  comments-created:
+    description: 'Number of PR comments created'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Hello world!
+      run: |
+        echo "Hello world!"
+      shell: bash
+
