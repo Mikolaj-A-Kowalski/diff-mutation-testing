@@ -7,6 +7,12 @@ inputs:
     description: 'GitHub token for API access'
     required: true
     default: '${{ github.token }}' # TODO: Is this correct
+  build-commands:
+    description: 'Commands to build the project'
+    required: true
+  test-commands:
+    description: 'Commands to run the tests'
+    required: true
 
 outputs:
   # TODO: Need to figure out the what outputs do we want
@@ -16,3 +22,6 @@ outputs:
 runs:
   using: "docker"
   image: "Dockerfile"   # Refers to Dockerfile in the same repo
+  args:
+    - ${{ inputs.build-commands }}
+    - ${{ inputs.test-commands }}

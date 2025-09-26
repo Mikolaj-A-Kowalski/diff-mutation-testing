@@ -16,12 +16,16 @@ for PATCH_FILE in "$PATCHES_DIR"/*.diff; do
     PATCH_NAME=$(basename "$PATCH_FILE")
     echo "Testing patch: $PATCH_NAME"
 
+    PATCH_FILE=$(realpath "$PATCH_FILE")
+
+    cat $PATCH_FILE
+
     # fresh worktree for each patch
     rm -rf "$WORKTREE"
     git worktree add "$WORKTREE" HEAD
     cd "$WORKTREE"
 
-    if git apply "$PATCH_FILE"; then
+    if patch -p0 <$PATCH_FILE; then
         echo "Applied patch: $PATCH_NAME"
     else
         echo "Failed to apply patch: $PATCH_NAME"

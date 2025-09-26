@@ -53,8 +53,9 @@ def run(diff: str):
     # Create patch directory - use absolute path for safety.
     # TODO: check if this is needed.
 
-    project_root = os.path.dirname(__file__)  
-    patches_dir = os.path.join(project_root, "patches")
+    # project_root = os.path.dirname(__file__)  
+    # patches_dir = os.path.join(project_root, "patches")
+    patches_dir = "./patches"
     os.makedirs(patches_dir, exist_ok=True)
 
     generate_patches(patches_dir, mutations)
