@@ -9,3 +9,8 @@ def produce_patch_str(mutation: Tuple[str, int, str, str]):
     patch_str += "+"+new_line
 
     return patch_str
+
+def produce_patch(mutation:Tuple[str, int, str, str], path:str):
+
+    with open(path, "w") as f:
+        f.write(produce_patch_str(mutation))
