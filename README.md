@@ -26,3 +26,22 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
+
+
+
+### Local execution
+
+```
+python3 main.py <path-to-diff-file> 
+```
+
+Run script
+
+```
+./run_all_patches.sh <patches-dir> <worktree-dir> <pytest_command> <output-file>
+```
+
+e.g.
+```
+./run_all_patches.sh patches worktree "pytest -q" results.txt
+```
