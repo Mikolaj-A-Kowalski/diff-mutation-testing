@@ -1,5 +1,7 @@
 # Diff-based mutation testing GitHub Action
 
+test
+
 This repository was created as part of the X-VISS hackathon 2025 by the following participants:
 - Mikolaj Kowalski @Mikolaj-A-Kowalski
 - Jack Franklin @jackdfranklin
@@ -40,7 +42,7 @@ jobs:
 
 First generate a diff file:
 ```bash
-git diff > <path-to-diff-file>
+git diff --output=<path-to-diff-file>
 ```
 
 Then generate a set of mutation patch files using:
