@@ -1,8 +1,11 @@
 # main.py
-import os
-from parse import parse_diff   
 from mutate import mutate_candidates
+from parse import parse_diff
+from patch import produce_patch
+
+import os
 import sys
+from typing import List, Tuple
 
 Mutation = Tuple[str, int, str, str]
 
@@ -16,6 +19,8 @@ def generate_patches(patches_dir: str, mutations: List[Mutation]) -> None:
         mutations: list of (file, line_number, old_line, new_line)
     """
     os.makedirs(patches_dir, exist_ok=True)
+
+    print(mutations)
 
     for i, mutation in enumerate(mutations, start=1):
         patch_name = f"mutation_{i}.diff"
@@ -52,7 +57,7 @@ def run(diff: str):
     patches_dir = os.path.join(project_root, "patches")
     os.makedirs(patches_dir, exist_ok=True)
 
-    generate_patches(patches_dir, mutations[0])
+    generate_patches(patches_dir, mutations)
 
 
 def main():
