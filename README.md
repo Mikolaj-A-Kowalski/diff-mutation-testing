@@ -39,22 +39,22 @@ jobs:
 ### Local execution
 
 First generate a diff file:
-```
+```bash
 git diff > <path-to-diff-file>
 ```
 
 Then generate a set of mutation patch files using:
-```
+```bash
 python3 main.py <path-to-diff-file> 
 ```
 
 Finally, run the following script to perform the mutation testing:
-```
+```bash
 ./run_all_patches.sh <patches-dir> <worktree-dir> <pytest_command> <output-file>
 ```
 
 e.g.
-```
+```bash
 ./run_all_patches.sh patches worktree "pytest -q" results.txt
 ```
 
